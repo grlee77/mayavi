@@ -6,7 +6,7 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 coverage run -p -m nose.core -v mayavi
 if %errorlevel% neq 0 exit /b %errorlevel%
 cd integratedtests/mayavi
-coverage run -p run.py
+coverage run --rcfile=../../.coveragerc -p run.py
 if %errorlevel% neq 0 exit /b %errorlevel%
 coverage combine
 coverage report
