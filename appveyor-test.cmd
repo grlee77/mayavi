@@ -8,6 +8,5 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 cd integratedtests
 coverage run --rcfile=../../.coveragerc -p run.py
 if %errorlevel% neq 0 exit /b %errorlevel%
-cd ../..
 coverage combine
 coverage report
