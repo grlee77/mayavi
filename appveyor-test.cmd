@@ -5,5 +5,9 @@ coverage run -p -m nose.core -v tvtk/tests
 if %errorlevel% neq 0 exit /b %errorlevel%
 coverage run -p -m nose.core -v mayavi
 if %errorlevel% neq 0 exit /b %errorlevel%
+cd integratedtests
+coverage run --rcfile=../../.coveragerc -p run.py
+if %errorlevel% neq 0 exit /b %errorlevel%
+cd ../..
 coverage combine
 coverage report
